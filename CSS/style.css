@@ -1,0 +1,1803 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Altone Regular', 'Arial', Arial, sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%; 
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: 'Altone Regular';
+    src: url('../FONTS/Altone_Trial_Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Altone Bold';
+    src: url('../FONTS/Altone_Trial_Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Altone Italico';
+    src: url('../FONTS/Altone_Trial_Oblique.ttf');
+}
+
+@font-face {
+    font-family: 'Altone Bold Italico';
+    src: url('../FONTS/Altone_Trial_BoldOblique.ttf');
+}
+
+/*------------------------- SEÇÕES -------------------------*/
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#sobreNos, #projetos, #equipe, #rodape, #banner, #comoPodemosAjudar, #servicos {
+    width: 100%;
+    height: 716px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: default;
+    background-color: #E9E9E9;
+}
+
+#sobreNos::after, #projetos::after {
+    content: "";
+    width: 75%;
+    height: 60vh;
+    border: white 20px solid;
+    position: absolute;
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+#sobreNos > *, #projetos > *, #equipe > * {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#paragrafo{
+    font-size: 35px;
+    color: white;
+    margin-top: 18px;
+    margin-bottom: 30px;
+    max-width: 850px;
+    white-space: normal;
+    word-break: break-word;
+    font-family: 'Altone Regular';
+}
+
+/*------------------------- CABEÇALHO -------------------------*/
+#cabecalho, #cabecalho * {
+    background-color: #6861FF;
+}
+
+#cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    box-sizing: border-box;
+}
+
+#cabecalho nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#cabecalho::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    width: 90%;
+    height: 9px; 
+    background-color: white;
+    border-radius: 15px;
+}
+
+#cabecalho ul {
+    list-style-type: none;
+    display: flex;
+    gap: 90px;
+}
+
+#cabecalho a{
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-family: 'Altone Bold';
+    transition: 0.3s;
+}
+
+#cabecalho a:hover {
+    color: #FCEC4F;
+}
+
+#cabecalho img {
+    width: 200px;
+    height: auto;
+    cursor:default;
+}
+
+/*------------------------- BANNER -------------------------*/
+#bannerOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(104,97,255,0.6);
+    pointer-events: none;
+}
+
+#banner{
+    justify-content: space-between;
+    background-image: url('../IMG/bannerFundo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    position: relative;
+    z-index: 0;
+}
+
+#textoBanner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 55%;
+    height: 80%;
+    margin-left: 100px;
+    position: relative;
+    background-color: transparent;
+    font-size: 25px;
+}
+
+#imagemBanner {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    height: 80%;
+    background-color: transparent;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner pre{
+    max-width: 95%;
+    white-space: normal;
+    word-break: break-word;
+    font-size: 35px;
+}
+
+#banner button{
+    margin-top: 15px;
+    width: 450px;
+    height: 95px;
+    border-radius: 100px;
+    background-color: #77FF00;
+    color: #007A00;
+    font-size: 30px;
+    font-family: 'Altone Bold';
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    position: relative;
+    bottom: 0;
+    transform: translateX(35%);
+    left: 0;
+}
+
+#banner button:hover{
+    background-color: #007A00;
+    color: #77FF00;
+}
+
+#imagemBanner img {
+    width: 370px;
+    height: auto;
+}
+
+/*------------------------- COMO PODEMOS AJUDAR -------------------------*/
+#comoPodemosAjudar {
+    background-color: #FF891B;
+    background-image: url('../IMG/estampaSecoes.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#tituloComoPodemosAjudar {
+    font-family: 'Altone Bold';
+    font-size: 55px;
+    color: white;
+}
+
+#textoComoPodemosAjudar{
+    margin-left: 90px;
+}
+
+/*------------------------- SERVIÇOS -------------------------*/
+#servicos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#iconeServicos{
+    width: 255px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icon img {
+    width: 80px;
+    height: 80px;
+}
+
+#icon{
+    background-color: #77FF00;
+    border: #007A00 10px solid;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#descricaoServico{
+    font-size: 25px;
+    color: white;
+    margin-top: 18px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    font-family: 'Altone Bold';
+    text-align: center;
+}
+
+#quadroServicos{
+    width: 1050px;
+    height: 500px;
+    background-color: #6861FF;
+    border-radius: 50px;
+    border-right: #533DFF 20px solid;
+    border-bottom: #533DFF 20px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+#tituloServicos{
+    background-color: #FF891B;
+    border: #FF6E26 10px solid;
+    width: 480px;
+    height: 90px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: -50px;
+}
+
+#tituloServicos h1{
+    font-family: 'Altone Bold';
+}
+
+/*------------------------- PROJETOS -------------------------*/
+#projetos {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#textoProjetos{
+    margin-right: 55px;
+}
+
+#projetos::after{
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+    right: 10.5px;
+    border-right: none;
+}
+
+#tituloProjetos{
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Altone Bold';
+    font-size: 55px;
+    color: #FCEC4F;
+}
+
+#novidade{
+    font-family: 'Altone Bold';
+    font-size: 40px;
+    color: #FCEC4F;
+    position: relative;
+}
+
+#novidade::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 115%;
+    height: 105%; 
+    z-index: -1;
+    background-color: #FF6E26;
+    border-radius: 50px;
+}
+
+#iconeProjetos, #iconeProjetos *{
+    background-color: transparent;
+}
+
+#iconeProjetos{
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+#iconeProjetos img{
+    width: 400px;
+    height: auto;
+    margin-left: 50px;
+}
+
+#btnIrParaJogo{
+    margin-top: 15px;
+    width: 450px;
+    height: 95px;
+    border-radius: 100px;
+    background-color: #77FF00;
+    color: #007A00;
+    font-size: 30px;
+    font-family: 'Altone Bold';
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+}
+
+#btnIrParaJogo:hover{
+    background-color: #007A00;
+    color: #77FF00;
+}
+
+/*------------------------- SOBRE NÓS -------------------------*/
+#sobreNos, #projetos{
+    background-color: #6861FF;
+}
+
+#sobreNos::after{
+    border-top-right-radius: 250px;
+    border-bottom-right-radius: 250px;
+    border: #FCEC4F 20px solid;
+    border-left: none;
+}
+
+#iconesSobreNos, #iconesSobreNos *{
+    background-color: transparent;
+}
+
+#iconesSobreNos{
+    position: absolute;
+    z-index: 1.5;
+    width: 100%;
+    height: 111%;
+}
+
+#icone1 {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}
+
+#icone2 {
+    width: 10%;
+    height: auto;
+    position: absolute;
+    right: 5%;
+    top: 100px;
+    transform: rotate(40deg);
+}
+
+#tituloSobre{
+    font-family: 'Altone Bold';
+    font-size: 55px;
+    color: #FCEC4F;
+}
+
+#textoSobreNos{
+    margin-left: 55px;
+}
+
+/*------------------------- EQUIPE -------------------------*/
+#equipe{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #533DFF;
+    background-image: url('../IMG/estampaEquipe.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 300px;
+}
+
+#equipeParte1, #equipeParte2{
+    width: 1020px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 55px;
+}
+
+#equipeParte2{
+    justify-content: flex-end;
+}
+
+#integrante{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#nomeIntegrante p{
+    color: white;
+    font-family: 'Altone Bold';
+    font-size: 20px;
+    margin: 0;
+}
+
+#funcao{
+    color: white;
+    font-family: 'Altone Bold';
+    font-size: 30px;
+}
+
+#equipeParte1 img, #equipeParte2 img{
+    width: 150px;
+    height: auto;
+}
+
+#tituloEquipe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 150px;
+    border-radius: 100px;
+    background-color: white;
+    color: #6861FF;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+
+#tituloEquipe h1{
+    font-family: 'Altone Bold';
+}
+
+#retrato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+/*-------------------------Rodapé-------------------------*/
+#rodape, #rodape *{
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+#rodape{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #FF891B;
+    background-image: url('../IMG/estampaRodape.png');
+}
+
+#rodape nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: #533DFF;
+    width: 50vw;
+    height: 20vh;
+    border-radius: 100px;
+    border: #6861FF 20px solid;
+    margin-top: 30px;
+}
+
+#rodape ul {
+    list-style-type: none;
+    display: flex;
+    gap: 90px;
+    color: #6861FF;
+}
+
+#rodape a{
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FCEC4F;
+    font-family: 'Altone Bold';
+    transition: 0.3s;
+}
+
+#rodape a:hover {
+    color: #FF6E26;
+}
+
+#rodape p {
+    font-size: 15px;
+    color: #6861FF;
+    margin-top: 25px;
+    font-family: 'Altone Regular';
+    z-index: 1;
+}
+
+#logotipoRodape img{
+    width: 250px;
+    height: auto;
+    z-index: 1;
+    position: relative;
+}
+
+#plus{
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+#rodape #infoContatos{
+    gap: 15px;
+    font-size: 15px;
+}
+
+/* ------------------------- RESPONSIVIDADE ------------------------- */
+
+@media (max-width: 580px) {
+   /*------------------------- SEÇÕES -------------------------*/
+    #sobreNos, #projetos, #equipe, #rodape, #banner, #comoPodemosAjudar, #servicos {
+        height: 516px;
+    }
+
+    #paragrafo {
+        font-size: 18px;
+    }
+
+    /*------------------------- CABEÇALHO -------------------------*/
+    #cabecalho{
+        height: 150px;
+    }
+    
+    #cabecalho a {
+        font-size: 12px;
+    }
+
+    #cabecalho ul {
+        gap: 12px;
+    }
+
+    #cabecalho img {
+        width: 60px;
+    }
+
+    /*------------------------- BANNER -------------------------*/
+    #textoBanner {
+        margin-left: 40px;
+    }
+
+    #tituloBanner {
+        font-size: 20px;
+    }
+
+    #paragrafoBanner{
+        font-size: 10px;
+    }
+
+    #banner {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #textoBanner {
+        width: 80%;
+        margin-bottom: 50px;
+        margin-left: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #banner pre {
+        font-size: 17px;
+        margin-top: 12px;
+    }
+
+    #imagemBanner {
+        margin: 0;
+    }
+
+    #imagemBanner img {
+        margin-top: 30px;
+        width: 120px;
+    }
+
+    #banner button {
+        transform: translateX(0);
+        right: 0;
+        width: 250px;
+        font-size: 18px;
+        height: 60px;
+    }
+
+    /*------------------------- COMO PODEMOS AJUDAR -------------------------*/
+    #comoPodemosAjudar {
+        background-size: 260px;
+    }
+    
+    #tituloComoPodemosAjudar {
+        font-size: 32px;
+    }
+
+    #textoComoPodemosAjudar {
+        margin-left: 25px;
+        width: 70%;
+    }
+
+    /*------------------------- SERVIÇOS -------------------------*/
+    #icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    #icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    #iconeServicos {
+        width: 250px;
+        height: 250px;
+    }
+    
+    #descricaoServico {
+        font-size: 15px;
+        margin-top: 7px;
+    }
+
+    #quadroServicos {
+        width: 90%;
+        max-width: 335px;
+        border-right: #533DFF 10px solid;
+        border-bottom: #533DFF 10px solid;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 410px;
+    }
+
+    #tituloServicos {
+        width: 230px;
+        height: 50px;
+        transform: translateX(35%);
+        left: -50px;
+        top: -35px;
+    }
+
+    #tituloServicos h1 {
+        font-size: 15px;
+    }
+
+    /*------------------------- PROJETOS -------------------------*/
+    #projetos {
+        height: 350px;
+    }
+
+    #projetos::after {
+        width: 80%;
+        height: 200px;
+        right: 0;
+        border-width: 9px;
+    }
+
+    #tituloProjetos {
+        font-size: 18px;
+        gap: 30px;
+    }
+
+    #novidade {
+        font-size: 15px;
+    }
+
+    #textoProjetos {
+        margin-right: 23px;
+    }
+
+    #textoProjetos #paragrafo {
+        font-size: 10px;
+        width: 120%;
+        margin-right: 23px;
+        margin-left: -15px;
+    }
+
+    #iconeProjetos img {
+        width: 150px;
+        margin-top: -50px;
+        margin-right: 5px;
+    }
+
+    #btnIrParaJogo {
+        width: 140px;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    /*------------------------- SOBRE NÓS -------------------------*/
+    #sobreNos {
+        height: 280px;
+    }
+    #sobreNos::after {
+        height: 300px;
+        width: 90%;
+        height: 200px;
+        border-left: none;
+        left: 0;
+        border-width: 10px;
+    }
+
+    #tituloSobre {
+        font-size: 22px;
+    }
+
+    #textoSobreNos {
+        margin-left: 20px;
+        width: 250px;
+    }
+
+    #sobreNos #paragrafo {
+        font-size: 12px;
+    }
+
+    #icone1 {
+        width: 270px;
+        height: 50px;
+        bottom: 380px;
+
+    }
+
+    #icone2 {
+        width: 40px;
+        height: 40px;
+        top: 400px;
+        right: 5%;
+    }
+
+    /*------------------------- EQUIPE -------------------------*/
+    #equipe {
+        background-position: right bottom;
+        background-size: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #equipeParte1, #equipeParte2{
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    #equipeParte2 {
+        justify-content: space-around;
+    }
+
+    #equipeParte1 img, #equipeParte2 img{
+        width: 100px;
+    }
+
+    #funcao {
+        font-size: 18px;
+    }
+
+    #integrante{
+        margin: 0;
+    }
+
+    #tituloEquipe {
+        width: 250px;
+        height: 75px;
+        margin-left: 25px;
+    }
+
+    #tituloEquipe h1 {
+        font-size: 20px;
+    }
+
+    #nomeIntegrante {
+        background-color: #6861FF;
+        width: 50%;
+        height: 110%;
+        border-radius: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #nomeIntegrante p {
+        font-size: 15px;
+    }
+
+    /*------------------------- RODAPÉ -------------------------*/
+    #logotipoRodape img{
+        width: 40%;
+        max-width: 450px;
+    }
+
+    #rodape nav{
+        width: 90%;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        border: #6861FF 12px solid;
+    }
+
+    #rodape ul{
+        gap: 10vw;
+    }
+
+    #rodape a{
+        font-size: 11px;
+    }
+
+    #rodape p{
+        font-size: 7px;
+        margin-top: 10px;
+    }
+
+    #rodape #infoContatos{
+        font-size: 7px;
+    }
+} 
+
+@media (min-width: 581px) and (max-width: 768px) {
+     /*------------------------- SEÇÕES -------------------------*/
+    #sobreNos, #projetos, #equipe, #rodape, #banner, #comoPodemosAjudar, #servicos {
+        height: 516px;
+    }
+
+    #paragrafo {
+        font-size: 18px;
+    }
+
+    /*------------------------- CABEÇALHO -------------------------*/
+    #cabecalho a {
+        font-size: 15px;
+    }
+
+    #cabecalho ul {
+        gap: 40px;
+    }
+
+    #cabecalho img {
+        width: 140px;
+    }
+
+    /*------------------------- BANNER -------------------------*/
+    #textoBanner {
+        margin-left: 40px;
+    }
+
+    #tituloBanner {
+        font-size: 30px;
+    }
+
+    #banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #textoBanner {
+        width: 55%;
+        margin-left: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    #banner pre {
+        font-size: 20px;
+        margin-top: 12px;
+    }
+
+    #imagemBanner {
+        margin: 0;
+    }
+
+    #imagemBanner img {
+        margin-top: 30px;
+        width: 90%;
+    }
+
+    #banner button {
+        transform: translateX(0);
+        right: 0;
+        width: 300px;
+        font-size: 18px;
+        height: 65px;
+    }
+
+    /*------------------------- COMO PODEMOS AJUDAR -------------------------*/
+    #comoPodemosAjudar {
+        background-size: 260px;
+    }
+    
+    #tituloComoPodemosAjudar {
+        font-size: 45px;
+    }
+
+    #textoComoPodemosAjudar {
+        margin-left: 25px;
+        width: 70%;
+    }
+
+    /*------------------------- SERVIÇOS -------------------------*/
+    #icon img {
+        width: 55px;
+        height: 55px;
+    }
+
+    #icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    #iconeServicos {
+        width: 170px;
+        height: 230px;
+    }
+    
+    #descricaoServico {
+        font-size: 19px;
+        margin-top: 7px;
+    }
+
+    #quadroServicos {
+        width: 90%;
+        max-width: 780px;
+        border-right: #533DFF 10px solid;
+        border-bottom: #533DFF 10px solid;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 75%;
+    }
+
+    #tituloServicos {
+        width: 300px;
+        height: 70px;
+        transform: translateX(-50%);
+        left: 150px;
+    }
+
+    #tituloServicos h1 {
+        font-size: 20px;
+    }
+
+    /*------------------------- PROJETOS -------------------------*/
+    #projetos {
+        height: 400px;
+    }
+
+    #projetos::after {
+        width: 80%;
+        height: 35%;
+        right: 0;
+        border-width: 10px;
+    }
+
+    #tituloProjetos {
+        font-size: 25px;
+        gap: 15px;
+    }
+
+    #novidade {
+        font-size: 25px;
+    }
+
+    #textoProjetos {
+        margin-right: 30px;
+        width: 100%;
+    }
+
+    #textoProjetos #paragrafo {
+        font-size: 18px;
+    }
+
+    #iconeProjetos img {
+        width: 230px;
+        margin-top: -40px;
+        margin-left: -20px;
+
+    }
+
+    #btnIrParaJogo {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+        margin-top: -10px;
+    }
+
+    /*------------------------- SOBRE NÓS -------------------------*/
+    #sobreNos {
+        height: 400px;
+    }
+    #sobreNos::after {
+        height: 30%;
+        width: 80%;
+        height: 250px;
+        border-left: none;
+        left: 0;
+        border-width: 10px;
+    }
+
+    #tituloSobre {
+        font-size: 27px;
+    }
+
+    #textoSobreNos {
+        margin-left: 25px;
+        width: 70%;
+    }
+
+    #sobreNos #paragrafo {
+        font-size: 18px;
+    }
+
+    #icone1 {
+        width: 470px;
+        height: 80px;
+        bottom: 310px;
+
+    }
+
+    #icone2 {
+        width: 60px;
+        height: 60px;
+        top: 400px;
+        right: 5%;
+    }
+
+    /*------------------------- EQUIPE -------------------------*/
+    #equipe {
+        background-position: right bottom;
+        background-size: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #equipeParte1, #equipeParte2{
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    #equipeParte2 {
+        justify-content: space-around;
+    }
+
+    #equipeParte1 img, #equipeParte2 img{
+        width: 130px;
+    }
+
+    #funcao {
+        font-size: 20px;
+    }
+
+    #integrante{
+        margin: 0;
+    }
+
+    #tituloEquipe {
+        margin: 0;
+        margin-top: 50px;
+        width: 250px;
+        height: 75px;
+    }
+
+    #tituloEquipe h1 {
+        font-size: 20px;
+    }
+
+    #nomeIntegrante {
+        background-color: #6861FF;
+        width: 50%;
+        height: 110%;
+        border-radius: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #nomeIntegrante p {
+        font-size: 15px;
+    }
+
+    /*------------------------- RODAPÉ -------------------------*/
+    #logotipoRodape img{
+        width: 40%;
+        max-width: 650px;
+    }
+
+    #rodape nav{
+        width: 90%;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        border: #6861FF 12px solid;
+    }
+
+    #rodape ul{
+        gap: 10vw;
+    }
+
+    #rodape a{
+        font-size: 15px;
+    }
+
+    #rodape p{
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    #rodape #infoContatos{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px){
+     /*------------------------- SEÇÕES -------------------------*/
+    #sobreNos, #projetos, #equipe, #rodape, #banner, #comoPodemosAjudar, #servicos {
+        height: 516px;
+    }
+
+    #paragrafo {
+        font-size: 18px;
+    }
+
+    /*------------------------- CABEÇALHO -------------------------*/
+    #cabecalho a {
+        font-size: 15px;
+    }
+
+    #cabecalho ul {
+        gap: 40px;
+    }
+
+    #cabecalho img {
+        width: 140px;
+    }
+
+    /*------------------------- BANNER -------------------------*/
+    #textoBanner {
+        margin-left: 40px;
+    }
+
+    #tituloBanner {
+        font-size: 40px;
+    }
+
+    #banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #textoBanner {
+        width: 55%;
+        margin-left: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    #banner pre {
+        font-size: 25px;
+        margin-top: 12px;
+    }
+
+    #imagemBanner {
+        margin: 0;
+    }
+
+    #imagemBanner img {
+        margin-top: 30px;
+        width: 80%;
+    }
+
+    #banner button {
+        transform: translateX(0);
+        right: 0;
+        width: 300px;
+        font-size: 20px;
+        height: 75px;
+    }
+
+    /*------------------------- COMO PODEMOS AJUDAR -------------------------*/
+    #comoPodemosAjudar {
+        background-size: 260px;
+    }
+    
+    #tituloComoPodemosAjudar {
+        font-size: 55px;
+    }
+
+    #textoComoPodemosAjudar {
+        margin-left: 30px;
+        width: 60%;
+    }
+
+    /*------------------------- SERVIÇOS -------------------------*/
+    #icon img {
+        width: 55px;
+        height: 55px;
+    }
+
+    #icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    #iconeServicos {
+        width: 180px;
+        height: 230px;
+    }
+    
+    #descricaoServico {
+        font-size: 20px;
+        margin-top: 7px;
+        
+    }
+
+    #quadroServicos {
+        width: 90%;
+        max-width: 780px;
+        border-right: #533DFF 10px solid;
+        border-bottom: #533DFF 10px solid;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 75%;
+    }
+
+    #tituloServicos {
+        width: 300px;
+        height: 70px;
+        transform: translateX(-50%);
+        left: 150px;
+    }
+
+    #tituloServicos h1 {
+        font-size: 22px;
+    }
+
+    /*------------------------- PROJETOS -------------------------*/
+    #projetos {
+        height: 400px;
+    }
+
+    #projetos::after {
+        width: 80%;
+        height: 30%;
+        right: 0;
+        border-width: 10px;
+    }
+
+    #tituloProjetos {
+        font-size: 30px;
+        gap: 20px;
+        margin-top: -20px;
+    }
+
+    #novidade {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+
+    #textoProjetos {
+        margin-right: 30px;
+        width: 100%;
+    }
+
+    #textoProjetos #paragrafo {
+        font-size: 22px;
+    }
+
+    #iconeProjetos img {
+        width: 230px;
+        margin-top: -40px;
+        margin-left: -10px;
+
+    }
+
+    #btnIrParaJogo {
+        width: 55%;
+        height: 40%;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    /*------------------------- SOBRE NÓS -------------------------*/
+    #sobreNos {
+        height: 400px;
+    }
+    #sobreNos::after {
+        height: 40%;
+        width: 80%;
+        height: 270px;
+        border-left: none;
+        left: 0;
+        border-width: 10px;
+    }
+
+    #tituloSobre {
+        font-size: 30px;
+    }
+
+    #textoSobreNos {
+        margin-left: 25px;
+        width: 70%;
+    }
+
+    #sobreNos #paragrafo {
+        font-size: 22px;
+    }
+
+    #icone1 {
+        width: 600px;
+        height: 90px;
+        bottom: 310px;
+
+    }
+
+    #icone2 {
+        width: 80px;
+        height: 80px;
+        top: 350px;
+        right: 5%;
+    }
+
+    /*------------------------- EQUIPE -------------------------*/
+    #equipe {
+        background-position: right bottom;
+        background-size: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #equipeParte1, #equipeParte2{
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    #equipeParte2 {
+        justify-content: space-around;
+    }
+
+    #equipeParte1 img, #equipeParte2 img{
+        width: 140px;
+    }
+
+    #funcao {
+        font-size: 20px;
+    }
+
+    #integrante{
+        margin: 0;
+    }
+
+    #tituloEquipe {
+        margin: 0;
+        margin-top: 50px;
+        width: 250px;
+        height: 75px;
+    }
+
+    #tituloEquipe h1 {
+        font-size: 22px;
+    }
+
+    #nomeIntegrante {
+        background-color: #6861FF;
+        width: 50%;
+        height: 110%;
+        border-radius: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #nomeIntegrante p {
+        font-size: 17px;
+    }
+
+    /*------------------------- RODAPÉ -------------------------*/
+    #logotipoRodape img{
+        width: 40%;
+        max-width: 640px;
+    }
+
+    #rodape nav{
+        width: 80%;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        border: #6861FF 12px solid;
+    }
+
+    #rodape ul{
+        gap: 10vw;
+    }
+
+    #rodape a{
+        font-size: 17px;
+    }
+
+    #rodape p{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    #rodape #infoContatos{
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+     /*------------------------- SEÇÕES -------------------------*/
+    #sobreNos, #projetos, #equipe, #rodape, #banner, #comoPodemosAjudar, #servicos {
+        height: 516px;
+    }
+
+    #paragrafo {
+        font-size: 18px;
+    }
+
+    /*------------------------- CABEÇALHO -------------------------*/
+    #cabecalho a {
+        font-size: 15px;
+    }
+
+    #cabecalho ul {
+        gap: 40px;
+    }
+
+    #cabecalho img {
+        width: 140px;
+    }
+
+    /*------------------------- BANNER -------------------------*/
+    #textoBanner {
+        margin-left: 40px;
+    }
+
+    #tituloBanner {
+        font-size: 40px;
+    }
+
+    #banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #textoBanner {
+        width: 55%;
+        margin-left: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    #banner pre {
+        font-size: 25px;
+        margin-top: 12px;
+    }
+
+    #imagemBanner {
+        margin: 0;
+    }
+
+    #imagemBanner img {
+        margin-top: 30px;
+        width: 80%;
+    }
+
+    #banner button {
+        transform: translateX(0);
+        right: 0;
+        width: 300px;
+        font-size: 20px;
+        height: 75px;
+    }
+
+    /*------------------------- COMO PODEMOS AJUDAR -------------------------*/
+    #comoPodemosAjudar {
+        background-size: 260px;
+    }
+    
+    #tituloComoPodemosAjudar {
+        font-size: 55px;
+    }
+
+    #textoComoPodemosAjudar {
+        margin-left: 30px;
+        width: 60%;
+    }
+
+    /*------------------------- SERVIÇOS -------------------------*/
+    #icon img {
+        width: 55px;
+        height: 55px;
+    }
+
+    #icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    #iconeServicos {
+        width: 180px;
+        height: 230px;
+    }
+    
+    #descricaoServico {
+        font-size: 20px;
+        margin-top: 7px;
+        
+    }
+
+    #quadroServicos {
+        width: 90%;
+        max-width: 780px;
+        border-right: #533DFF 10px solid;
+        border-bottom: #533DFF 10px solid;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 75%;
+    }
+
+    #tituloServicos {
+        width: 300px;
+        height: 70px;
+        transform: translateX(-50%);
+        left: 150px;
+    }
+
+    #tituloServicos h1 {
+        font-size: 22px;
+    }
+
+    /*------------------------- PROJETOS -------------------------*/
+    #projetos {
+        height: 400px;
+    }
+
+    #projetos::after {
+        width: 80%;
+        height: 30%;
+        right: 0;
+        border-width: 10px;
+    }
+
+    #tituloProjetos {
+        font-size: 30px;
+        gap: 20px;
+        margin-top: -20px;
+    }
+
+    #novidade {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+
+    #textoProjetos {
+        margin-right: 30px;
+        width: 100%;
+    }
+
+    #textoProjetos #paragrafo {
+        font-size: 22px;
+    }
+
+    #iconeProjetos img {
+        width: 230px;
+        margin-top: -40px;
+        margin-left: -10px;
+
+    }
+
+    #btnIrParaJogo {
+        width: 55%;
+        height: 45%;
+        font-size: 25px;
+        margin-top: 40px;
+    }
+
+    /*------------------------- SOBRE NÓS -------------------------*/
+    #sobreNos {
+        height: 400px;
+    }
+    #sobreNos::after {
+        height: 40%;
+        width: 80%;
+        height: 270px;
+        border-left: none;
+        left: 0;
+        border-width: 10px;
+    }
+
+    #tituloSobre {
+        font-size: 30px;
+    }
+
+    #textoSobreNos {
+        margin-left: 25px;
+        width: 70%;
+    }
+
+    #sobreNos #paragrafo {
+        font-size: 22px;
+    }
+
+    #icone1 {
+        width: 850px;
+        height: 115px;
+        bottom: 300px;
+
+    }
+
+    #icone2 {
+        width: 100px;
+        height: 100px;
+        top: 350px;
+        right: 5%;
+    }
+
+    /*------------------------- EQUIPE -------------------------*/
+    #equipe {
+        background-position: right bottom;
+        background-size: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #equipeParte1, #equipeParte2{
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    #equipeParte2 {
+        justify-content: space-around;
+    }
+
+    #equipeParte1 img, #equipeParte2 img{
+        width: 140px;
+        height: 140px;
+    }
+
+    #funcao {
+        font-size: 20px;
+    }
+
+    #integrante{
+        margin: 0;
+    }
+
+    #tituloEquipe {
+        margin: 0;
+        margin-top: 50px;
+        width: 250px;
+        height: 75px;
+    }
+
+    #tituloEquipe h1 {
+        font-size: 22px;
+    }
+
+    #nomeIntegrante {
+        background-color: #6861FF;
+        width: 50%;
+        height: 110%;
+        border-radius: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #nomeIntegrante p {
+        font-size: 17px;
+    }
+
+    /*------------------------- RODAPÉ -------------------------*/
+    #logotipoRodape img{
+        width: 40%;
+        max-width: 640px;
+    }
+
+    #rodape nav{
+        width: 80%;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        border: #6861FF 12px solid;
+    }
+
+    #rodape ul{
+        gap: 10vw;
+    }
+
+    #rodape a{
+        font-size: 17px;
+    }
+
+    #rodape p{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    #rodape #infoContatos{
+        font-size: 12px;
+    }
+}
